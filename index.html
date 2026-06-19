@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER TRAVELS | Premium Travel & Tourism Portfolio</title>
+    <!-- Meta Descriptions for SEO -->
+    <meta name="description" content="Discover premium luxury travel experiences around the world. Tailored itineraries, exotic destinations, and high-end tourism design by Aether Travels.">
+    <!-- Main Style Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+       1. DYNAMIC NAVIGATION & HEADER (WordPress Sticky Navbar)
+       ========================================================================== -->
+    <header class="site-header" id="siteHeader">
+        <div class="container header-container">
+            <!-- Left: Logo -->
+            <a href="#home" class="logo" id="headerLogo">
+                <span class="logo-text">AETHER <span>TRAVELS</span></span>
+            </a>
+
+            <!-- Center: Navigation Menu -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="active" id="navHome">Home</a>
+                <a href="#destinations" id="navDestinations">Destinations</a>
+                <a href="#packages" id="navPackages">Tour Packages</a>
+                <a href="#testimonials" id="navTestimonials">Reviews</a>
+                <a href="#contact" id="navContact">Contact Us</a>
+            </nav>
+
+            <!-- Right: Search Toggle & Primary CTA Button -->
+            <div class="header-utilities">
+                <button class="search-trigger" id="searchTrigger" aria-label="Open Search">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+                <a href="#contact" class="btn btn-secondary header-action-btn" id="headerCtaBtn">Inquire Now</a>
+                
+                <!-- Mobile Navigation Burger Toggle -->
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay Screen (Simulating search drawer widgets) -->
+    <div class="search-overlay" id="searchOverlay">
+        <button class="search-overlay-close" id="searchOverlayClose" aria-label="Close Search">
+            <svg viewBox="0 0 24 24">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#ffffff"/>
+            </svg>
+        </button>
+        <div class="search-form-container">
+            <h3>Search Destinations</h3>
+            <form action="#" method="GET" id="searchOverlayForm">
+                <div class="search-input-group">
+                    <input type="text" placeholder="Type destination and press enter..." class="search-input-field" id="searchOverlayInput" autocomplete="off">
+                    <button type="submit" class="search-submit-btn" aria-label="Submit Search">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       2. IMPRESSIVE TOURISM HERO CANVAS (Above the Fold)
+       ========================================================================== -->
+    <section class="hero-canvas" id="home" style="background-image: url('assets/hero_maldives.png');">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-editorial">
+                    <span class="hero-subtitle">Bespoke Expeditions</span>
+                    <h1 class="hero-title">Wander Into<br>The <em>Unseen</em>.</h1>
+                    <p class="hero-description">Experience high-end luxury minimalism combined with spectacular remote escapes. Crafted itineraries designed for mindful globetrotters.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating WordPress-style Quick Search Row -->
+        <div class="search-filter-bar container">
+            <form class="filter-grid" id="heroSearchForm">
+                <div class="filter-group">
+                    <label class="filter-label" for="heroDest">Destination</label>
+                    <div class="filter-input-wrapper no-arrow">
+                        <input type="text" id="heroDest" placeholder="e.g. Alps, Maldives..." autocomplete="off">
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="heroDate">Departure Date</label>
+                    <div class="filter-input-wrapper no-arrow">
+                        <input type="date" id="heroDate" value="2026-07-01">
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="heroType">Tour Type</label>
+                    <div class="filter-input-wrapper">
+                        <select id="heroType">
+                            <option value="all">All Experiences</option>
+                            <option value="luxury">Luxury Escape</option>
+                            <option value="adventure">Alpine Adventure</option>
+                            <option value="cultural">Cultural Exploration</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-btn-group">
+                    <button type="submit" class="btn btn-primary filter-submit-btn" id="heroSearchSubmitBtn">Search Tours</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!--Spacer to offset the floating bar -->
+    <div style="height: 100px;" class="desktop-only-spacer"></div>
+
+    <!-- ==========================================================================
+       3. FEATURED DESTINATIONS / LOOP GRID (The Portfolio Hub)
+       ========================================================================== -->
+    <section class="section reveal" id="destinations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Curated Portfolios</span>
+                <h2 class="section-title">Iconic Destinations</h2>
+                <p class="section-description">A hand-picked selection of high-fidelity travel portfolios representing organic visual storytelling and luxury environments.</p>
+            </div>
+
+            <!-- 4-Column Loop Grid matching Gutenberg/Elementor Portfolio blocks -->
+            <div class="loop-grid">
+                
+                <!-- Card 1: Maldives -->
+                <div class="destination-card" id="destCardMaldives">
+                    <span class="destination-badge">Luxury Escape</span>
+                    <div class="destination-img-wrapper">
+                        <img src="assets/hero_maldives.png" alt="Maldives Overwater Resort Landscape">
+                        <div class="destination-card-overlay"></div>
+                    </div>
+                    <div class="destination-info">
+                        <div class="destination-rating">
+                            <!-- Star SVGs -->
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <h3 class="destination-name">Maldives Atoll</h3>
+                        <div class="destination-meta">
+                            <span class="destination-price">From <span>$8,500</span></span>
+                            <a href="#contact" class="destination-action-btn">Explore Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Kyoto -->
+                <div class="destination-card" id="destCardKyoto">
+                    <span class="destination-badge">Cultural Expedition</span>
+                    <div class="destination-img-wrapper">
+                        <img src="assets/destination_kyoto.png" alt="Kyoto temple in bamboo forest">
+                        <div class="destination-card-overlay"></div>
+                    </div>
+                    <div class="destination-info">
+                        <div class="destination-rating">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <h3 class="destination-name">Kyoto Zen Gardens</h3>
+                        <div class="destination-meta">
+                            <span class="destination-price">From <span>$4,200</span></span>
+                            <a href="#contact" class="destination-action-btn">Explore Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Amalfi Coast -->
+                <div class="destination-card" id="destCardAmalfi">
+                    <span class="destination-badge">Cultural Expedition</span>
+                    <div class="destination-img-wrapper">
+                        <img src="assets/destination_amalfi.png" alt="Amalfi Coast Positano Townhouses">
+                        <div class="destination-card-overlay"></div>
+                    </div>
+                    <div class="destination-info">
+                        <div class="destination-rating">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <h3 class="destination-name">Amalfi Riviera</h3>
+                        <div class="destination-meta">
+                            <span class="destination-price">From <span>$6,800</span></span>
+                            <a href="#contact" class="destination-action-btn">Explore Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Swiss Alps -->
+                <div class="destination-card" id="destCardSwiss">
+                    <span class="destination-badge">Alpine Adventure</span>
+                    <div class="destination-img-wrapper">
+                        <img src="assets/destination_swiss.png" alt="Swiss Alps luxury chalet under snow">
+                        <div class="destination-card-overlay"></div>
+                    </div>
+                    <div class="destination-info">
+                        <div class="destination-rating">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <h3 class="destination-name">Engadin Valley</h3>
+                        <div class="destination-meta">
+                            <span class="destination-price">From <span>$7,500</span></span>
+                            <a href="#contact" class="destination-action-btn">Explore Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       4. PREMIUM TOUR PACKAGES & BOOKING CARDS (Asymmetrical Grid)
+       ========================================================================== -->
+    <section class="section section-bg reveal" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Exquisite Journeys</span>
+                <h2 class="section-title">Featured Itineraries</h2>
+                <p class="section-description">Immersive journeys mapped out by expert guides. Enjoy personalized concierge access, luxury lodging, and authentic local access.</p>
+            </div>
+
+            <div class="packages-container">
+                
+                <!-- Package Row 1: Patagonia Wilderness (Image Left, Content Right) -->
+                <div class="package-row" id="packagePatagonia">
+                    <div class="package-media">
+                        <img src="assets/destination_patagonia.png" alt="Patagonia wilderness lake mountains">
+                    </div>
+                    <div class="package-content">
+                        <span class="package-duration">9 Days / 8 Nights</span>
+                        <h3 class="package-title">Patagonia Glacial Expedition</h3>
+                        <p class="package-desc">Journey through the wild dramatic landscapes of Southern Patagonia. A balanced expedition blending raw wilderness trails with ultra-comfortable eco-resorts overlooking glaciers.</p>
+                        
+                        <ul class="package-features">
+                            <li class="package-feature-item">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Private Glacier Trekking & Kayaking
+                            </li>
+                            <li class="package-feature-item">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Luxury Eco-Dome Accommodation
+                            </li>
+                            <li class="package-feature-item">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Gourmet Campfires & Wine Tasting
+                            </li>
+                            <li class="package-feature-item">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Dedicated 4x4 Support & Guides
+                            </li>
+                        </ul>
+
+                        <div class="package-price-wrap">
+                            <div class="package-price">
+                                All-Inclusive Price
+                                <strong>$5,400 <span>/ guest</span></strong>
+                            </div>
+                            <a href="#contact" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Row 2: Swiss Alps Winter (Image Right, Content Left) -->
+                <div class="package-row" id="packageAlps">
+                    <div class="package-media">
+                        <img src="assets/destination_swiss.png" alt="Swiss Alps snowy luxury cottage">
+                    </div>
+                    <div class="package-content">
+                        <span class="package-duration">7 Days / 6 Nights</span>
+                        <h3 class="package-title">St. Moritz Alpine Winter Retreat</h3>
+                        <p class="package-desc">Escape to the legendary peak village of St. Moritz. Indulge in private alpine skiing, legendary luxury chalets with heated outdoor pools, and world-class culinary highlights.</p>
+                        
+                        <ul class="package-features">
+                            <li class="package-feature-item">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Private Ski Passes & Instructor
+                            </li>
+                            <li class="package-feature-item">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Historic Glacier Express Excursion
+                            </li>
+                            <li class="package-feature-item">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Thermal Spa Wellness Access
+                            </li>
+                            <li class="package-feature-item">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                Michelin-Starred Dining Reservations
+                            </li>
+                        </ul>
+
+                        <div class="package-price-wrap">
+                            <div class="package-price">
+                                All-Inclusive Price
+                                <strong>$9,200 <span>/ guest</span></strong>
+                            </div>
+                            <a href="#contact" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       5. TRAVELER TESTIMONIALS & TRUST SECTION (Interactive Carousel)
+       ========================================================================== -->
+    <section class="section reveal" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Client Chronicles</span>
+                <h2 class="section-title">Traveler Testimonials</h2>
+                <p class="section-description">Real testimonials from our global community of sophisticated travelers who value design, details, and memorable moments.</p>
+            </div>
+
+            <div class="testimonials-wrapper">
+                <div class="testimonials-slider" id="testimonialsSlider">
+                    
+                    <!-- Slide 1 -->
+                    <div class="testimonial-item active">
+                        <span class="testimonial-quote-icon">“</span>
+                        <div class="testimonial-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <p class="testimonial-text">"Aether Travels designed the most flawless honeymoon in the Maldives. Every detail, from the private seaplane transfers to the custom sandbar dining setup, was absolute luxury. Pure travel design."</p>
+                        <div class="testimonial-user">
+                            <div class="testimonial-avatar">SM</div>
+                            <div class="testimonial-user-info">
+                                <h4 class="testimonial-name">Sarah &amp; Thomas Miller</h4>
+                                <span class="testimonial-tour">Maldives Escape</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="testimonial-item">
+                        <span class="testimonial-quote-icon">“</span>
+                        <div class="testimonial-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <p class="testimonial-text">"Our Kyoto expedition was deeply enriching. The temple visits were led by a resident monk, a true insider experience we couldn't have found elsewhere. The layout of the whole trip was flawless."</p>
+                        <div class="testimonial-user">
+                            <div class="testimonial-avatar">KL</div>
+                            <div class="testimonial-user-info">
+                                <h4 class="testimonial-name">Kenneth Lawson</h4>
+                                <span class="testimonial-tour">Kyoto Zen Trail</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="testimonial-item">
+                        <span class="testimonial-quote-icon">“</span>
+                        <div class="testimonial-stars">
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <p class="testimonial-text">"The Amalfi Coast custom itinerary allowed us to escape the crowds and explore hidden beaches by private catamaran. Exceptional attention to detail and outstanding personalized concierge service!"</p>
+                        <div class="testimonial-user">
+                            <div class="testimonial-avatar">HR</div>
+                            <div class="testimonial-user-info">
+                                <h4 class="testimonial-name">Helena Rosales</h4>
+                                <span class="testimonial-tour">Amalfi Coast Escape</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Testimonial Slider Dots -->
+                <div class="testimonial-dots" id="testimonialDots">
+                    <span class="testimonial-dot active"></span>
+                    <span class="testimonial-dot"></span>
+                    <span class="testimonial-dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       6. CONTACT & CUSTOM TRIP INQUIRY HUB (WP Forms Style)
+       ========================================================================== -->
+    <section class="section section-bg reveal" id="contact">
+        <div class="container">
+            <div class="contact-hub-grid">
+                
+                <!-- Left: Contact Details & Agency Info -->
+                <div class="contact-info-col">
+                    <div>
+                        <h3 class="contact-info-title">Let Us Craft Your Next Chapter</h3>
+                        <p class="contact-info-desc">Reach out to connect with our luxury travel coordinators. We design tailored portfolios matching your unique adventure profiles.</p>
+                        
+                        <div class="contact-details-list">
+                            
+                            <!-- Address -->
+                            <div class="contact-detail-item">
+                                <div class="contact-detail-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                </div>
+                                <div class="contact-detail-content">
+                                    <h4>Global Head Office</h4>
+                                    <p>Suite 400, 72 Park Avenue, New York, NY</p>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="contact-detail-item">
+                                <div class="contact-detail-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                                </div>
+                                <div class="contact-detail-content">
+                                    <h4>Inquiry Hotlines</h4>
+                                    <p>+1 (800) 456-7890 / +1 (800) 456-7891</p>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="contact-detail-item">
+                                <div class="contact-detail-icon">
+                                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                </div>
+                                <div class="contact-detail-content">
+                                    <h4>Electronic Mail</h4>
+                                    <p>concierge@aethertravels.com</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Social Icons with Micro-animations -->
+                    <div class="contact-socials">
+                        <a href="#" class="contact-social-btn" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"/></svg>
+                        </a>
+                        <a href="#" class="contact-social-btn" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.8 2a3.8 3.8 0 0 0-3.8 3.8v8.4A3.8 3.8 0 0 0 7 20h10a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 17 4H7m5 3a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
+                        </a>
+                        <a href="#" class="contact-social-btn" aria-label="Twitter / X">
+                            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" class="contact-social-btn" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: WP Forms Simulated Fields -->
+                <div class="contact-form-col">
+                    <div class="wpforms-mock-container" style="position: relative;">
+                        <h3>Custom Trip Planner</h3>
+                        <p>Tell us about your dream getaway and our concierge team will reach out with a custom draft itinerary.</p>
+                        
+                        <form action="#" method="POST" class="wp-form" id="inquiryForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-input-label" for="inquiryName">Your Name <span style="color: red;">*</span></label>
+                                    <input type="text" id="inquiryName" class="form-input" placeholder="e.g. John Doe" required autocomplete="name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-input-label" for="inquiryEmail">Your Email <span style="color: red;">*</span></label>
+                                    <input type="email" id="inquiryEmail" class="form-input" placeholder="e.g. john@example.com" required autocomplete="email">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-input-label" for="inquiryDest">Destination of Interest</label>
+                                <input type="text" id="inquiryDest" class="form-input" placeholder="e.g. Maldives, Swiss Alps, Kyoto" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-input-label" for="inquiryMsg">Travel Style &amp; Special Requests</label>
+                                <textarea id="inquiryMsg" class="form-input" placeholder="Let us know your travel timeframe, dietary restrictions, preferred luxury level..."></textarea>
+                            </div>
+
+                            <div class="form-submit-row">
+                                <button type="submit" class="btn btn-primary form-submit-btn" id="inquirySubmitBtn">Send Inquiry</button>
+                            </div>
+                        </form>
+
+                        <!-- Form AJAX simulated success overlay -->
+                        <div class="form-notification" id="formNotification">
+                            <div class="form-success-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                            </div>
+                            <h4>Inquiry Received</h4>
+                            <p>Thank you! Your inquiry was submitted successfully. One of our expert travel designers will connect with you within 24 hours.</p>
+                            <button class="btn btn-secondary" id="resetFormBtn" style="margin-top: 30px; padding: 10px 20px;">Submit Another Inquiry</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       7. FOOTER METRICS & LINKS (Multi-Column Standard)
+       ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            
+            <div class="footer-top-grid">
+                
+                <!-- Column 1: Brand & statement -->
+                <div class="footer-brand">
+                    <span class="footer-logo-text">AETHER <span>TRAVELS</span></span>
+                    <p>Crafting memories through luxury, organic travel and elegant destinations. Registered global agency specializing in premium tours since 2012.</p>
+                </div>
+
+                <!-- Column 2: Discover Destinations -->
+                <div>
+                    <h4 class="footer-col-title">Discover</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#destinations">Maldives Escape</a></li>
+                        <li><a href="#destinations">Kyoto Zen Trails</a></li>
+                        <li><a href="#destinations">Amalfi Coast Riviera</a></li>
+                        <li><a href="#destinations">Swiss Alps Chalet</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Company & Support Links -->
+                <div>
+                    <h4 class="footer-col-title">Company</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#home">About Our Agency</a></li>
+                        <li><a href="#packages">Curated Tour Packages</a></li>
+                        <li><a href="#testimonials">Traveler Chronicles</a></li>
+                        <li><a href="#contact">Contact Concierge</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter Signup -->
+                <div class="footer-newsletter">
+                    <h4 class="footer-col-title">Join The Club</h4>
+                    <p>Subscribe to receive curated luxury travel editorials and early announcements on rare remote itineraries.</p>
+                    <form action="#" method="POST" class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Subscribed successfully! Welcome to Aether Travels.'); this.reset();">
+                        <input type="email" placeholder="Your email address..." class="newsletter-input" required autocomplete="email">
+                        <button type="submit" class="newsletter-submit-btn" aria-label="Subscribe Newsletter">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Links -->
+            <div class="footer-bottom">
+                <span class="copyright-text" id="footerCopyright">&copy; 2026 Aether Travels. All rights reserved. Crafted for luxury explorers.</span>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Main JavaScript Link -->
+    <script src="app.js"></script>
+</body>
+</html>
